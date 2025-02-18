@@ -37,7 +37,7 @@ if _cuda_rnn:
   compute_rnn_workspace_reserve_space_sizes = _cuda_rnn.compute_rnn_workspace_reserve_space_sizes
 
 
-for rocm_module_name in [".rocm", "jax_rocm60_plugin"]:
+for rocm_module_name in [".rocm", "jax_rocm62_plugin"]:
   try:
     _hip_rnn = importlib.import_module(f"{rocm_module_name}._rnn", package="jaxlib")
   except ImportError:

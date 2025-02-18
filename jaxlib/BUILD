@@ -268,6 +268,9 @@ nanobind_extension(
     name = "rocm_plugin_extension",
     srcs = ["rocm_plugin_extension.cc"],
     module_name = "rocm_plugin_extension",
+    linkopts = [
+	"-lamdhip64",
+    ],
     deps = [
         ":gpu_plugin_extension",
         "@com_google_absl//absl/log",

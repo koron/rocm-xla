@@ -23,7 +23,7 @@ import jax._src.xla_bridge as xb
 
 # rocm_plugin_extension locates inside jaxlib. `jaxlib` is for testing without
 # preinstalled jax rocm plugin packages.
-for pkg_name in ['jax_rocm60_plugin', 'jaxlib']:
+for pkg_name in ['jax_rocm62_plugin', 'jaxlib']:
   try:
     rocm_plugin_extension = importlib.import_module(
         f'{pkg_name}.rocm_plugin_extension'

@@ -35,7 +35,7 @@ if _cuda_linalg:
         _name, _value, platform="CUDA", api_version=api_version
     )
 
-for rocm_module_name in [".rocm", "jax_rocm60_plugin"]:
+for rocm_module_name in [".rocm", "jax_rocm62_plugin"]:
   try:
     _hip_linalg = importlib.import_module(
         f"{rocm_module_name}._linalg", package="jaxlib"

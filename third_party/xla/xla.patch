@@ -1,0 +1,21 @@
+diff --git a/xla/stream_executor/device_description.h b/xla/stream_executor/device_description.h
+index b9afeb09b1..2a0025636d 100644
+--- a/xla/stream_executor/device_description.h
++++ b/xla/stream_executor/device_description.h
+@@ -205,7 +205,7 @@ class RocmComputeCapability {
+ 
+   bool gfx10_rx69xx() const { return gfx_version() == "gfx1030"; }
+ 
+-  bool gfx11_rx7900() const { return gfx_version() == "gfx1100"; }
++  bool gfx11_rx7900() const { return gfx_version() == "gfx1100" || gfx_version() == "gfx1102"; }
+ 
+   bool gfx1200() const { return gfx_version() == "gfx1200"; }
+ 
+@@ -267,6 +267,7 @@ class RocmComputeCapability {
+       "gfx940",  "gfx941",  "gfx942",  // MI300
+       "gfx1030",                       // RX68xx / RX69xx
+       "gfx1100",                       // RX7900
++      "gfx1102",                       // RX7600
+       "gfx1200", "gfx1201",
+   };
+ };

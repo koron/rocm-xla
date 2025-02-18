@@ -63,6 +63,9 @@ cc_binary(
     linkopts = [
         "-Wl,--version-script,$(location :gpu_version_script.lds)",
         "-Wl,--no-undefined",
+        "-lamdhip64",
+        "-L/usr/lib64/rocm/gfx11/lib",
+        "-lrccl",
     ],
     linkshared = True,
     deps = [

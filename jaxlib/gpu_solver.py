@@ -73,7 +73,7 @@ if _cuhybrid:
 try:
   from .rocm import _blas as _hipblas  # pytype: disable=import-error
 except ImportError:
-  for rocm_module_name in ["jax_rocm60_plugin"]:
+  for rocm_module_name in ["jax_rocm62_plugin"]:
     try:
       _hipblas = importlib.import_module(f"{rocm_module_name}._blas")
     except:
@@ -85,7 +85,7 @@ if _hipblas:
   for _name, _value in _hipblas.registrations().items():
     xla_client.register_custom_call_target(_name, _value, platform="ROCM")
 
-for rocm_module_name in [".rocm", "jax_rocm60_plugin"]:
+for rocm_module_name in [".rocm", "jax_rocm62_plugin"]:
   try:
     _hipsolver = importlib.import_module(
         f"{rocm_module_name}._solver", package="jaxlib"
@@ -102,7 +102,7 @@ if _hipsolver:
     xla_client.register_custom_call_target(_name, _value, platform="ROCM",
                                            api_version=api_version)
 
-for rocm_module_name in [".rocm", "jax_rocm60_plugin"]:
+for rocm_module_name in [".rocm", "jax_rocm62_plugin"]:
   try:
     _hiphybrid = importlib.import_module(
         f"{rocm_module_name}._hybrid", package="jaxlib"

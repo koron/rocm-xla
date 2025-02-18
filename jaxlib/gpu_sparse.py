@@ -41,7 +41,7 @@ if _cusparse:
   for _name, _value in _cusparse.registrations().items():
     xla_client.register_custom_call_target(_name, _value, platform="CUDA")
 
-for rocm_module_name in [".rocm", "jax_rocm60_plugin"]:
+for rocm_module_name in [".rocm", "jax_rocm62_plugin"]:
   try:
     _hipsparse = importlib.import_module(
         f"{rocm_module_name}._sparse", package="jaxlib"

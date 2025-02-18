@@ -39,7 +39,7 @@ if _cuda_triton:
   get_custom_call = _cuda_triton.get_custom_call
   get_serialized_metadata = _cuda_triton.get_serialized_metadata
 
-for rocm_module_name in [".rocm", "jax_rocm60_plugin"]:
+for rocm_module_name in [".rocm", "jax_rocm62_plugin"]:
   try:
     _hip_triton = importlib.import_module(
         f"{rocm_module_name}._triton", package="jaxlib"
